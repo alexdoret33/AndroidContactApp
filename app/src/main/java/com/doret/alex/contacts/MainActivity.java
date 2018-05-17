@@ -29,5 +29,7 @@ public class MainActivity extends Activity {
 
 
         adapter = new ContactAdapter(this, contactList);
+
+        contactView.setAdapter(adapter);
     }
 }

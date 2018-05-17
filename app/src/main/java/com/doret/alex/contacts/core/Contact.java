@@ -29,7 +29,7 @@ public class Contact {
             builder.append(FirstName.charAt(0));
             builder.append(FirstName.charAt(1));
         }
-        return "builder.toString";
+        return builder.toString();
     }
 
 

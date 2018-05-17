@@ -1,12 +1,14 @@
 package com.doret.alex.contacts;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.doret.alex.contacts.core.Contact;
+import com.doret.alex.contacts.core.RessourceHelper;
 
 import java.util.List;
 
@@ -34,6 +36,12 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
         contactName.setText(contact.getFullName());
         contactPhones.setText(contact.getPhoneNumbers());
 
+        RessourceHelper helper = RessourceHelper.getInstance();
+        int color = helper.getAliasColor(position);
+        contactAlias.getBackground().setColorFilter(
+                getContext().getResources().getColor(color),
+                PorterDuff.Mode.MULTIPLY
+        );
 
         return convertView;
 
